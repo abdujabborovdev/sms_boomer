@@ -97,6 +97,7 @@ Qolgan {qoldi} limitingiz qaytarildi!""")
                 yuborildi = yuborildi + 1
                 await call.message.edit_text(f"Sms yuborilinyapti {yuborildi}")
             else:
+                await call.message.edit_text("Sms yuborilmadi)
             await asyncio.sleep(5)
         await call.message.answer(f"""Smslar muvafiyaqiyatlik yuborilindi {yuborildi}-ta""")
 
