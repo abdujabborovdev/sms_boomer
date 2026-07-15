@@ -24,9 +24,7 @@ def check_proxy():
 def send_sms(phone, formatted_phone,neshta):
     is_proxy_ok, current_ip = check_proxy()
 
-    if not is_proxy_ok:
-
-        return False,
+    
 
     ua = UserAgent()
     url = "https://api.100k.uz/api/auth/sms-login"
