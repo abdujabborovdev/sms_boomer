@@ -6,3 +6,4 @@ requests==2.32.5
 aiofiles==24.1.0
 fake-useragent==2.2.0
 pydantic==2.11.10
+asyncpg
