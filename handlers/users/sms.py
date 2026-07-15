@@ -91,13 +91,12 @@ Qolgan {qoldi} limitingiz qaytarildi!""")
                     user.limit += qoldi
                     await session.commit()
                 break
-            holat, info = await asyncio.to_thread(send_sms, phone=nomer, formatted_phone=formatted,neshta=yuborildi)
+            holat = await asyncio.to_thread(send_sms, phone=nomer, formatted_phone=formatted,neshta=yuborildi)
             if holat:
                 qoldi = qoldi - 1
                 yuborildi = yuborildi + 1
-                await call.message.edit_text(f"{info}")
+                await call.message.edit_text(f"Sms yuborilinyapti {yuborildi}")
             else:
-                await call.message.edit_text(f"{info}")
             await asyncio.sleep(5)
         await call.message.answer(f"""Smslar muvafiyaqiyatlik yuborilindi {yuborildi}-ta""")
 
