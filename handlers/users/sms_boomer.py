@@ -39,11 +39,13 @@ def send_sms(phone, formatted_phone,neshta):
         response = requests.post(url, json=payload, headers=headers, proxies=proxies, timeout=15)
 
         if response.status_code == 200:
-
-            return True, f"SMS yuborildi, IP dan: {current_ip} {neshta+1} - ta"
+            print(f"SMS yuborildi, IP dan: {current_ip} {neshta+1} - ta")
+            return True
         else:
-            return False,f"Xatolik: {response.status_code}"
+            print(f"Xatolik: {response.status_code}")
+            return False
 
     except Exception as e:
-        return False,str(e)
+        print(f"{e}")
+        return False
 
